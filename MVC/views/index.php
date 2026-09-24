@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
-    <title> Wellersons | Seu sonho, nosso imóvel </title>
+    <title> Wellersons | Seu sonho, nossos imóveis </title>
 </head>
 <style>
+    body { background: rgb(246, 252, 255); }
     .nav-link a { font-size: 1.2rem !important; text-decoration: none !important; }
     
     .nav-link svg { 
@@ -27,7 +28,7 @@
         appearance: none;
         height: 44px;
         background-color: #fff;
-        background-image: url('../../images/icons/icon-seta.svg');
+        background-image: url('../../images/icons/icon-seta-espaco-usuario.svg');
         background-repeat: no-repeat; 
         background-position-x: calc(100% - 12px);
         background-position-y: calc(50% + 3px);
@@ -41,10 +42,13 @@
         outline: none;
     }
     
-    select:focus { border-color: #777; box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08); }
+    select:focus  { border-color: #777; box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08); }
+    .family-image { position: relative; z-index: -1; }
+
+    .my-6 { margin: 25rem 0 25rem 0; }
 </style>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid d-flex flex-column gap-5">
         <div class="navbar align-items-center justify-content-between px-4 mt-2 gap-4 bg-dark rounded-5">
             <div class="text-white display-2"> WELLERSONS </div>
             <div class="d-flex gap-4 align-items-center">
@@ -96,7 +100,25 @@
                 </div>
             </div>
         </div>    
+        <div class="d-flex justify-content-around align-items-center mb-4">
+            <img src="../../images/imagem-familia-index.webp" alt="imagem de família em casa" class="w-50 mx-3 my-2 rounded-4 shadow img-fluid">
+            <div class="d-flex flex-column gap-3">
+                <h1 class="display-2 text-center"> Seu sonho, nossos imóveis </h1> 
+                <h2 class="display-5 text-center"> Conheça nossa galeria! </h2> 
+
+                <a href="#galeria" class="fs-1 text-center text-decoration-none text-dark">▼ ▼ ▼</a>
+            </div>
+        </div>
     </div>
+    <section class="d-flex my-6 flex-column justify-content-evenly align-items-center">
+        <div class="text-white display-5 text-center bg-dark w-100 p-1"> Wellersons | Galeria </div>
+        <div class="container my-4" id="galeria">
+            <div class="row flex-column">
+            
+            </div>
+        </div>
+    </section>
+    
     
     <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
