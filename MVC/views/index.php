@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
-    <title> Wellerson | Imobiliárias </title>
+    <title> Wellersons | Seu sonho, nosso imóvel </title>
 </head>
 <style>
     .nav-link a { font-size: 1.2rem !important; text-decoration: none !important; }
@@ -20,17 +20,38 @@
     a:hover .icon-twitter   { fill: rgb(125, 221, 250); }
     a:hover .icon-instagram { fill: rgb(255, 158, 247); }
     a:hover .icon-facebook  { fill: rgb(125, 165, 250); }
+
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        height: 44px;
+        background-color: #fff;
+        background-image: url('../../images/icons/icon-seta.svg');
+        background-repeat: no-repeat; 
+        background-position-x: calc(100% - 12px);
+        background-position-y: calc(50% + 3px);
+        background-size: 20px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        padding: 0 50px 0 14px;
+        font-size: 1.1rem;
+        color: #333;
+        cursor: pointer;
+        outline: none;
+    }
+    
+    select:focus { border-color: #777; box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08); }
 </style>
 <body>
     <div class="container-fluid">
         <div class="navbar align-items-center justify-content-between px-4 mt-2 gap-4 bg-dark rounded-5">
-            <div>
-
-            </div>
+            <div class="text-white display-2"> WELLERSONS </div>
             <div class="d-flex gap-4 align-items-center">
-                <label for="user-configs" class="text-white"> Espaço do Usuário </label>
                 <select name="userConfigs" id="user-configs">
-                
+                    <option value="" selected disabled hidden> Espaço do Usuário </option>
+                    <option value="1"> Fazer Login </option>
+                    <option value="2"> Criar Conta </option>
                 </select>
                 <div class="nav-link"> 
                     <a href="#">
@@ -76,6 +97,7 @@
             </div>
         </div>    
     </div>
+    
     <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
