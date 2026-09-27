@@ -114,7 +114,7 @@
         <div class="text-white display-5 text-center bg-dark w-100 p-1"> Wellersons | Galeria </div>
         <div class="container my-4" id="galeria">
             <div class="row flex-column">
-            
+                
             </div>
         </div>
     </section>
