@@ -1,6 +1,6 @@
 <!DOCTYPE html>
+<?php include('../model/database_connection.php'); ?>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,7 +84,7 @@
                                 2.67,4,4,0,0,0,.1.85,12.68,12.68,0,0,1-1.63-.2,12.54,12.54,0,0,1-3.59-1.49A11.24,11.24,0,0,1,8.16,9.29a3.83,3.83,0,0,0,.4,4.27,2.74,
                                 2.74,0,0,0,.73.67v0a3.73,3.73,0,0,1-1.65-.45,3.81,3.81,0,0,0,1.13,2.72,3.72,3.72,0,0,0,1.3.8,2.66,2.66,0,0,0,
                                 .52.17,1.34,1.34,0,0,1-.42.1H9.6a4.12,4.12,0,0,1-.66-.05,3.74,3.74,0,0,0,1.53,2,3.7,3.7,0,0,0,1.94.58,
-                                7.07,7.07,0,0,1-1.05.72,7.51,7.51,0,0,1-3.43.88,9.46,9.46,0,0,1-1,0A10.38,10.38,0,0,0,12.64,23.39Z"/>
+                                    7.07,7.07,0,0,1-1.05.72,7.51,7.51,0,0,1-3.43.88,9.46,9.46,0,0,1-1,0A10.38,10.38,0,0,0,12.64,23.39Z"/>
                         </svg>
                     </a> 
                 </div>
@@ -94,7 +94,7 @@
                             <path d="M26.49,30H5.5A3.35,3.35,0,0,1,3,29a3.35,3.35,0,0,1-1-2.48V5.5A3.35,3.35,0,0,1,3,3,3.35,3.35,0,0,1,5.5,
                                 2h21A3.35,3.35,0,0,1,29,3,3.35,3.35,0,0,1,30,5.5v21A3.52,3.52,0,0,1,26.49,30Zm-9.08-4.81V16.8h2.83l.42-3.26H17.41V11.71a2.88,
                                 2.88,0,0,1,.09-1,1.09,1.09,0,0,1,.14-.33c.21-.38.76-.57,1.63-.57h1.5V6.94a22,22,0,0,0-2.5-.14,3.83,3.83,0,0,0-3.61,1.86,4.52,4.52,0,0,0-.63,
-                                2.4v2.48h-2.8V16.8H14v8.39Z"/>
+                                    2.4v2.48h-2.8V16.8H14v8.39Z"/>
                         </svg>
                     </a>
                 </div>
@@ -111,12 +111,12 @@
         </div>
     </div>
     <section class="d-flex my-6 flex-column justify-content-evenly align-items-center">
-        <div class="text-white display-5 text-center bg-dark w-100 p-1"> Wellersons | Galeria </div>
-        <div class="container my-4" id="galeria">
-            <div class="row flex-column">
-                
+        <div class="text-white display-5 text-center bg-dark w-100 p-1"> Wellersons | Galeria </div>        
+            <div class="container my-4" id="galeria" enctype="multipart/form-data">
+                <div class="row flex-column">
+                <?php ?>
+                </div>
             </div>
-        </div>
     </section>
     
     
