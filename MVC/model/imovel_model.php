@@ -11,7 +11,7 @@ class Imovel {
     private string $situacao;
     private ?string $foto = null;
 
-    public function get_id ()            : int     { return $this->id; }
+    public function get_id()             : int     { return $this->id; }
     public function get_id_imobiliaria() : int     { return $this->id_imobiliaria; }
     public function get_tipo()           : string  { return $this->tipo; } 
     public function get_valor()          : float   { return $this->valor; }
@@ -20,6 +20,7 @@ class Imovel {
     public function get_situacao()       : string  { return $this->situacao; }
     public function get_foto()           : ?string { return $this->foto; }
     
+    public function set_id(int $_id)                         : void   { $this->id = $_id; }
     public function set_id_imobiliaria(int $_id_imobiliaria) : void   { $this->id_imobiliaria = $_id_imobiliaria; }
     public function set_tipo(string $_tipo)                  : void   { $this->tipo = $_tipo; }
     public function set_valor(float $_valor)                 : void   { $this->valor = $_valor; }

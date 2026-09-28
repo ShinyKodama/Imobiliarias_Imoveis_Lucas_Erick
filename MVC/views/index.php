@@ -119,32 +119,30 @@ $imoveis = $modelo_imovel->listar_imoveis();
     </div>
     <section class="d-flex my-6 flex-column justify-content-evenly align-items-center">
         <div class="text-white display-5 text-center bg-dark w-100 p-1"> Wellersons | Galeria </div>        
-            <div class="container my-4" id="galeria" enctype="multipart/form-data">
-                <div class="row flex-column">
-                <?php foreach ($imoveis as $imovel): ?>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card h-100 shadow">
-                            <?php if ($imovel['Foto'] != null): ?>
-                                <img
-                                    src="data:image/jpeg;base64,<?= base64_encode($imovel['Foto']) ?>"
-                                    class="card-img-top"
-                                    alt="Imagem do imóvel"
-                                    style="height: 300px; object-fit: cover;"
-                                >
-                            <?php endif; ?>
-                            <div class="card-body">
-                                <h5 class="card-title"><?= htmlspecialchars($imovel['Tipo']) ?></h5>
-                                <p class="card-text"><?= htmlspecialchars($imovel['Bairro']) ?></p>
-                                <p class="card-text"> R$ <?= number_format($imovel['Valor'], 2, ',', '.') ?></p>
+            <div class="container my-4" id="galeria">
+                <div class="row g-4">
+                    <?php foreach ($imoveis as $imovel): ?>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card h-100 shadow">
+                                <?php if (!empty($imovel['Foto'])): ?>
+                                    <img src="data:image/jpeg;base64,<?= base64_encode($imovel['Foto']) ?>"
+                                        class="card-img-top" alt="Imagem do imóvel"
+                                        style="height: 300px; object-fit: cover;"
+                                    >
+                                <?php endif; ?>
+                                <div class="card-body">
+                                    <h5 class="card-title"><?= htmlspecialchars($imovel['Tipo']) ?></h5>
+                                    <p class="card-text"><?= htmlspecialchars($imovel['Bairro']) ?></p>
+                                    <p class="card-text"> R$ <?= number_format($imovel['Valor'], 2, ',', '.') ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
                 </div>
             </div>
     </section>
     <button class="btn btn-primary" onclick="window.location.href = 'inserir_imoveis.php'"> Inserir Imóveis </button>
-    
+
     <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
