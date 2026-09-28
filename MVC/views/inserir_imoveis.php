@@ -12,7 +12,8 @@
         <h1 class="text-center m-5 bg-dark text-white rounded-4 p-3 w-25 shadow"> Inserir Imóveis </h1>
     </div>
     <form action="../controller/imovel_controller.php" method="POST" enctype="multipart/form-data" 
-        class="d-flex justify-content-center align-items-center">
+    class="d-flex justify-content-center align-items-center">
+        <input type="hidden" name="acao" value="inserir">
         <div class="d-flex flex-column gap-4 w-50 bg-dark p-5 rounded-5 shadow">
             <input type="number" name="input-id-imobiliaria" placeholder="ID da imobiliaria">
             <input type="text"   name="input-tipo-imovel" placeholder="Tipo" class="form-control">
@@ -25,6 +26,7 @@
             <input type="text" name="input-situacao-imovel" placeholder="Situação" class="form-control">
     
             <button class="btn btn-primary"> Cadastrar Imóvel </button>
+
         </div>
     </form>
     <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
