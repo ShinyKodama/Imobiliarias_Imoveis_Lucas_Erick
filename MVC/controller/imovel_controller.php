@@ -41,22 +41,33 @@ class ImovelController {
         $st->bindValue(':Situacao', $imovel->get_situacao());
 
         $st->execute();
+        
+        header("Location: ../views/index.php"); 
+        exit;
     }
 
     public function deletar_imoveis() {
         $database = new Database();
         $pdo = $database->database_connect();
 
-        $id = (int) $_POST['ID'];
+        $id = (int) $_POST['inserir-id-imovel-deletar'];
         
         $sql = "DELETE FROM imovel WHERE ID = :ID";
         
         $st = $pdo->prepare($sql);
         $st->bindValue(':ID', $id, PDO::PARAM_INT);
         $st->execute();
+        
+        header("Location: ../views/index.php"); 
+        exit;
     }
 }
 
 $controller = new ImovelController();
-$controller->inserir_imoveis();
+$action = $_GET['action'] ?? $_POST['action'] ?? 'listar';
+
+switch ($action) {
+    case 'inserir' : $controller->inserir_imoveis(); break;
+    case 'deletar' : $controller->deletar_imoveis(); break;
+}
 ?>

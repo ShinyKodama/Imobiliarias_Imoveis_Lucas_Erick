@@ -59,10 +59,10 @@ $imoveis = $modelo_imovel->listar_imoveis();
         <div class="navbar align-items-center justify-content-between px-4 mt-2 gap-4 bg-dark rounded-5">
             <div class="text-white display-2"> WELLERSONS </div>
             <div class="d-flex gap-4 align-items-center">
-                <select name="userConfigs" id="user-configs">
-                    <option value="" selected disabled hidden> Espaço do Usuário </option>
-                    <option value="1"> Fazer Login </option>
-                    <option value="2"> Criar Conta </option>
+                <select name="painel-administrador" onchange="if(this.value) window.location.href = this.value;">
+                    <option value="" selected disabled hidden> Painel de Administrador </option>
+                    <option value="inserir_imoveis.php"> Inserir Imóveis no Catálogo </option>
+                    <option value="deletar_imoveis.php"> Deletar Imóveis do Catálogo </option>
                 </select>
                 <div class="nav-link"> 
                     <a href="#">
@@ -141,7 +141,6 @@ $imoveis = $modelo_imovel->listar_imoveis();
                 </div>
             </div>
     </section>
-    <button class="btn btn-primary" onclick="window.location.href = 'inserir_imoveis.php'"> Inserir Imóveis </button>
 
     <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
