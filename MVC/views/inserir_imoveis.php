@@ -26,7 +26,6 @@
             <input type="text" name="input-situacao-imovel" placeholder="Situação" class="form-control">
     
             <button class="btn btn-primary"> Cadastrar Imóvel </button>
-
         </div>
     </form>
     <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
