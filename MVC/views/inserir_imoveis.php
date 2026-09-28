@@ -13,11 +13,11 @@
     </div>
     <form action="../controller/imovel_controller.php?action=inserir" method="POST" enctype="multipart/form-data" 
         class="d-flex justify-content-center align-items-center">
-        
+
         <input type="hidden" name="action" value="inserir">
 
         <div class="d-flex flex-column gap-4 w-50 bg-dark p-5 rounded-5 shadow">
-            <input type="number" name="input-id-imobiliaria" placeholder="ID da imobiliaria">
+            <input type="number" name="input-id-imobiliaria" placeholder="ID da imobiliaria" class="form-control">
             <input type="text"   name="input-tipo-imovel" placeholder="Tipo" class="form-control">
             <input type="number" name="input-valor-imovel" placeholder="Valor (R$)" class="form-control">
             <input type="text"   name="input-bairro-imovel" placeholder="Bairro" class="form-control">
