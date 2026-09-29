@@ -1,0 +1,14 @@
+<div class="dropdown">
+    <button class="btn btn-outline-dark dropdown-toggle px-3 py-2 rounded-3 fw-bold" type="button" id="dropdownAdmin" data-bs-toggle="dropdown" aria-expanded="false">
+        ⚙️ Painel Admin
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2 rounded-3" aria-labelledby="dropdownAdmin">
+        <li><h6 class="dropdown-header text-uppercase text-muted small fw-bold">Imóveis</h6></li>
+        <li><a class="dropdown-item rounded-2" href="inserir_imovel.php">➕ Inserir Imóvel</a></li>
+        <li><a class="dropdown-item rounded-2 text-danger" href="deletar_imovel.php">🗑️ Deletar Imóvel</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><h6 class="dropdown-header text-uppercase text-muted small fw-bold">Imobiliárias</h6></li>
+        <li><a class="dropdown-item rounded-2" href="inserir_imobiliaria.php">➕ Cadastrar Imobiliária</a></li>
+        <li><a class="dropdown-item rounded-2" href="listar_imobiliarias.php">📋 Listar Parceiras</a></li>
+    </ul>
+</div>

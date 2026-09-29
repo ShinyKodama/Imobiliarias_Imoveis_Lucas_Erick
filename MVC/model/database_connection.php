@@ -8,7 +8,7 @@ class Database {
     
     public function database_connect() : PDO {
         try {
-            $pdo = new PDO(
+            $pdo = new PDO (
                 "mysql:host={$this->host};port={$this->port};dbname={$this->database_name};charset=utf8mb4",
                 $this->user_name,
                 $this->password,

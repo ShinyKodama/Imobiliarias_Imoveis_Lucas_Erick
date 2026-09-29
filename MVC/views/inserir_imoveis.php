@@ -27,7 +27,7 @@ $modelo      = $imobiliaria->listar_imobiliarias();
         <input type="hidden" name="action" value="inserir">
 
         <div class="d-flex flex-column gap-4 w-50 bg-dark p-5 rounded-5 shadow">
-            <select name="" id="input-id-imobiliaria">
+            <select name="input-id-imobiliaria">
                <?php if (!empty($modelo)) : ?>
                     <?php foreach ($modelo as $item): ?>
                         <option value="<?= $item['ID']; ?>"> <?= $item['Nome'] . " - " . $item['Telefone']; ?> </option>
