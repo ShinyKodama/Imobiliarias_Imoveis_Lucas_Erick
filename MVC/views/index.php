@@ -121,23 +121,32 @@ $imoveis = $modelo_imovel->listar_imoveis();
         <div class="text-white display-5 text-center bg-dark w-100 p-1"> Wellersons | Galeria </div>        
             <div class="container my-4" id="galeria">
                 <div class="row g-4">
-                    <?php foreach ($imoveis as $imovel): ?>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="card h-100 shadow">
-                                <?php if (!empty($imovel['Foto'])): ?>
-                                    <img src="data:image/jpeg;base64,<?= base64_encode($imovel['Foto']) ?>"
-                                        class="card-img-top" alt="Imagem do imóvel"
-                                        style="height: 300px; object-fit: cover;"
-                                    >
-                                <?php endif; ?>
-                                <div class="card-body">
-                                    <h5 class="card-title"><?= htmlspecialchars($imovel['Tipo']) ?></h5>
-                                    <p class="card-text"><?= htmlspecialchars($imovel['Bairro']) ?></p>
-                                    <p class="card-text"> R$ <?= number_format($imovel['Valor'], 2, ',', '.') ?></p>
+                    <?php if (!empty($imoveis)): ?>
+                        <?php foreach ($imoveis as $imovel): ?>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="card h-100 shadow">
+                                    <?php if (!empty($imovel['Foto'])): ?>
+                                        <img src="data:image/jpeg;base64,<?= base64_encode($imovel['Foto']) ?>"
+                                            class="card-img-top" alt="Imagem do imóvel"
+                                            style="height: 300px; object-fit: cover;"
+                                        >
+                                    <?php endif; ?>
+                                    <?php if (empty($imovel['Foto'])): ?>
+                                        <h1 class="text-center text-dark"> Nenhum imóvel registrado ainda! </h1>
+                                    <?php endif; ?>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?= htmlspecialchars($imovel['Tipo']) ?></h5>
+                                        <p class="card-text"><?= htmlspecialchars($imovel['Bairro']) ?></p>
+                                        <p class="card-text"> R$ <?= number_format($imovel['Valor'], 2, ',', '.') ?></p>
+                                    </div>
                                 </div>
                             </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <div class="col-12">
+                            <h1 class="text-center text-dark my-5"> Nenhum imóvel registrado! </h1>
                         </div>
-                    <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
             </div>
     </section>
