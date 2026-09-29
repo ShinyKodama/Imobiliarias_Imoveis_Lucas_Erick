@@ -30,7 +30,7 @@ class ImovelController {
         $st = $pdo->prepare($sql);
 
         $st->bindValue(':IDImobiliaria', $imovel->get_id_imobiliaria());
-        $st->bindValue(':Tipo', $imovel->get_tipo());
+        $st->bindValue(':Tipo', $imovel->get_tipo(), PDO::PARAM_STR);
         $st->bindValue(':Valor', $imovel->get_valor());
         $st->bindValue(':Bairro', $imovel->get_bairro());
         $st->bindValue(':Descricao', $imovel->get_descricao());

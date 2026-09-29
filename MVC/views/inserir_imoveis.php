@@ -27,14 +27,16 @@ $modelo      = $imobiliaria->listar_imobiliarias();
         <input type="hidden" name="action" value="inserir">
 
         <div class="d-flex flex-column gap-4 w-50 bg-dark p-5 rounded-5 shadow">
-            <select name="input-id-imobiliaria">
+            <select name="input-id-imobiliaria" class="p-2">
                <?php if (!empty($modelo)) : ?>
+                    <option value="" disabled selected hidden> Selecione a Imobiliária </option>
                     <?php foreach ($modelo as $item): ?>
-                        <option value="<?= $item['ID']; ?>"> <?= $item['Nome'] . " - " . $item['Telefone']; ?> </option>
+                        <option value="<?= $item['ID'] ?>"> <?= $item['Nome'] . " - " . $item['Telefone']; ?> </option>
                     <?php endforeach ?>
                 <?php else: ?>
                     <option value="" disabled>Nenhuma imobiliária encontrada no banco</option>
                 <?php endif; ?>
+            </select>
             <input type="text"   name="input-tipo-imovel" placeholder="Tipo" class="form-control">
             <input type="number" name="input-valor-imovel" placeholder="Valor (R$)" class="form-control">
             <input type="text"   name="input-bairro-imovel" placeholder="Bairro" class="form-control">

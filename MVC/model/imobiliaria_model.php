@@ -21,7 +21,7 @@ class Imobiliaria {
         $database = new Database();
         $pdo = $database->database_connect();
 
-        $sql = " SELECT im.Nome, im.Telefone, im.Contato FROM imobiliaria im ";
+        $sql = " SELECT im.ID, im.Nome, im.Telefone, im.Contato FROM imobiliaria im ";
 
         $st = $pdo->prepare($sql);
         $st->execute();
