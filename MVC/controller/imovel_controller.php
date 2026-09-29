@@ -1,6 +1,6 @@
 <?php
-include("../model/database_connection.php");
-include("../model/imovel_model.php");
+include_once("../model/database_connection.php");
+include_once("../model/imovel_model.php");
 
 class ImovelController {
     public function inserir_imoveis() {
@@ -18,10 +18,7 @@ class ImovelController {
 
         $foto = null;
         if (isset($_FILES['input-foto-imovel']) && $_FILES['input-foto-imovel']['error'] === UPLOAD_ERR_OK) {
-            $foto = file_get_contents(
-                $_FILES['input-foto-imovel']['tmp_name']
-            );
-
+            $foto = file_get_contents($_FILES['input-foto-imovel']['tmp_name']);
             $imovel->set_foto($foto);
         }
 

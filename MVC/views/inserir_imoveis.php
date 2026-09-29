@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<?php 
+include_once('../controller/imovel_controller.php'); 
+include_once('../controller/imobiliaria_controller.php');
+include_once('../model/imovel_model.php'); 
+include_once('../model/imobiliaria_model.php'); 
+
+$imobiliaria = new Imobiliaria();
+$modelo      = $imobiliaria->listar_imobiliarias();
+
+?>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +27,14 @@
         <input type="hidden" name="action" value="inserir">
 
         <div class="d-flex flex-column gap-4 w-50 bg-dark p-5 rounded-5 shadow">
-            <input type="number" name="input-id-imobiliaria" placeholder="ID da imobiliaria" class="form-control">
+            <select name="" id="input-id-imobiliaria">
+               <?php if (!empty($modelo)) : ?>
+                    <?php foreach ($modelo as $item): ?>
+                        <option value="<?= $item['ID']; ?>"> <?= $item['Nome'] . " - " . $item['Telefone']; ?> </option>
+                    <?php endforeach ?>
+                <?php else: ?>
+                    <option value="" disabled>Nenhuma imobiliária encontrada no banco</option>
+                <?php endif; ?>
             <input type="text"   name="input-tipo-imovel" placeholder="Tipo" class="form-control">
             <input type="number" name="input-valor-imovel" placeholder="Valor (R$)" class="form-control">
             <input type="text"   name="input-bairro-imovel" placeholder="Bairro" class="form-control">
