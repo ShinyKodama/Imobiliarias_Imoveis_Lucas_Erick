@@ -59,7 +59,8 @@ $imoveis = $modelo_imovel->listar_imoveis();
         <div class="navbar align-items-center justify-content-between px-4 mt-2 gap-4 bg-dark rounded-5">
             <div class="text-white display-2"> WELLERSONS </div>
             <div class="d-flex gap-4 align-items-center">
-                <select name="painel-administrador" onchange="if (this.value) window.location.href = this.value;">
+                <select name="painel-administrador" id="id-painel-administrador" data-possui-imoveis = "<?= (empty($imoveis)) ? false : true ?> ">
+                    
                     <option value="" selected disabled hidden> Painel de Administrador </option>
                     <option value="inserir_imoveis.php"> Inserir Imóveis no Catálogo </option>
                     <option value="deletar_imoveis.php"> Deletar Imóveis do Catálogo </option>
@@ -150,8 +151,9 @@ $imoveis = $modelo_imovel->listar_imoveis();
                 </div>
             </div>
     </section>
-
+    
     <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/painel_administrador.js"></script>
 </body>
 
 </html>

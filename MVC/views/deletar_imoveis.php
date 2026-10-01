@@ -30,6 +30,6 @@ $modelo = $imovel->listar_imoveis();
         </select>
         <button type="submit">Deletar</button>
     </form>
-
+    <script src=""></script>
 </body>
 </html>
