@@ -59,7 +59,8 @@ $imoveis = $modelo_imovel->listar_imoveis();
         <div class="navbar align-items-center justify-content-between px-4 mt-2 gap-4 bg-dark rounded-5">
             <div class="text-white display-2"> WELLERSONS </div>
             <div class="d-flex gap-4 align-items-center">
-                <select name="painel-administrador" id="id-painel-administrador" data-possui-imoveis = "<?= (empty($imoveis)) ? false : true ?> ">
+                <select name="painel-administrador" id="id-painel-administrador" 
+                    data-possui-imoveis = "<?= (!empty($imoveis) && is_array($imoveis)) ? 'true' : 'false' ?>">
                     
                     <option value="" selected disabled hidden> Painel de Administrador </option>
                     <option value="inserir_imoveis.php"> Inserir Imóveis no Catálogo </option>
@@ -136,7 +137,11 @@ $imoveis = $modelo_imovel->listar_imoveis();
                                         <h1 class="text-center text-dark"> Nenhum imóvel registrado ainda! </h1>
                                     <?php endif; ?>
                                     <div class="card-body">
-                                        <h5 class="card-title"><?= htmlspecialchars($imovel['Tipo']) ?></h5>
+                                        <h5 class="card-title">
+                                            <?= htmlspecialchars($imovel['NomeImobiliaria']) ?> 
+                                            - <?= htmlspecialchars($imovel['TelefoneImobiliaria']) ?> 
+                                        </h5>
+                                        <p class="card-text"><?= htmlspecialchars($imovel['Tipo']) ?></p>
                                         <p class="card-text"><?= htmlspecialchars($imovel['Bairro']) ?></p>
                                         <p class="card-text"> R$ <?= number_format($imovel['Valor'], 2, ',', '.') ?></p>
                                     </div>

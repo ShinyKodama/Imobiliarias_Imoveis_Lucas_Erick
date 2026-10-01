@@ -33,7 +33,20 @@ class Imovel {
         $database = new Database();
         $pdo = $database->database_connect();
 
-        $sql = " SELECT i.ID, i.Tipo, i.Valor, i.Bairro, i.Descricao, i.Foto, i.Situacao, im.Nome FROM imovel i INNER JOIN imobiliaria im ON im.id = i.IDImobiliaria; ";
+        $sql = " 
+            SELECT 
+                i.ID, 
+                i.Tipo, 
+                i.Valor, 
+                i.Bairro, 
+                i.Descricao, 
+                i.Foto, 
+                i.Situacao, 
+                im.Nome AS NomeImobiliaria,
+                im.Telefone AS TelefoneImobiliaria
+            FROM imovel i 
+            INNER JOIN imobiliaria im 
+                ON im.ID = i.IDImobiliaria; ";
 
         $st = $pdo->prepare($sql);
         $st->execute();
