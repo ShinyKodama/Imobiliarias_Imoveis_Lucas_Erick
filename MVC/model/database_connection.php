@@ -6,10 +6,17 @@ class Database {
     private string $password      = "root"; 
     private int $port             = 3306;
     
+    public function __construct() {
+        if (gethostname() === "DESKTOP-R2NKPHM") {
+            $this->password = "1234";
+            $this->port = 3307;
+        }        
+    }
+
     public function database_connect() : PDO {
         try {
             $pdo = new PDO (
-                "mysql:host={$this->host};port={$this->port};dbname={$this->database_name};charset=utf8mb4",
+                "mysql:host={$this->host};port={$this->port};dbname={$this->database_name};charset=utf8",
                 $this->user_name,
                 $this->password,
             );
