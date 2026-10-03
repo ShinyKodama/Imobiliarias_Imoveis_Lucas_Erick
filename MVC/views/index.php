@@ -59,13 +59,26 @@ $imoveis = $modelo_imovel->listar_imoveis();
         <div class="navbar align-items-center justify-content-between px-4 mt-2 gap-4 bg-dark rounded-5">
             <div class="text-white display-2"> WELLERSONS </div>
             <div class="d-flex gap-4 align-items-center">
-                <select name="painel-administrador" id="id-painel-administrador" 
-                    data-possui-imoveis = "<?= (!empty($imoveis) && is_array($imoveis)) ? 'true' : 'false' ?>">
-                    
-                    <option value="" selected disabled hidden> Painel de Administrador </option>
-                    <option value="inserir_imoveis.php"> Inserir Imóveis no Catálogo </option>
-                    <option value="deletar_imoveis.php"> Deletar Imóveis do Catálogo </option>
-                </select>
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle px-3 py-2 rounded-3" 
+                        type="button" id="dropdownAdmin" data-bs-toggle="dropdown" aria-expanded="false">
+                        Painel de Administrador
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2 rounded-3" aria-labelledby="dropdownAdmin">
+                        <li><h6 class="dropdown-header text-uppercase text-muted small fw-bold">Imóveis</h6></li>
+                        <li><a class="dropdown-item rounded-2" href="inserir_imoveis.php">Inserir Imóvel</a></li>
+                        <li>
+                            <a class="dropdown-item rounded-2 text-danger" href="deletar_imoveis.php" 
+                                id="btn-deletar-imoveis" data-possui-imoveis="false">Deletar Imóvel</a>
+                        </li>
+                        
+                        <li><hr class="dropdown-divider"></li>
+                        
+                        <li><h6 class="dropdown-header text-uppercase text-muted small fw-bold">Imobiliárias</h6></li>
+                        <li><a class="dropdown-item rounded-2" href="inserir_imobiliarias.php">Cadastrar Imobiliária</a></li>
+                        <li><a class="dropdown-item rounded-2" href="listar_imobiliarias.php">Listar Parceiras</a></li>
+                    </ul>
+                </div>
                 <div class="nav-link"> 
                     <a href="#">
                         <svg viewBox="0 0 32 32" xmlns="http://w3.org" class="icon-instagram"> 

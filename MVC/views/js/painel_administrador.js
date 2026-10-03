@@ -1,15 +1,10 @@
-const painelAdministrador = document.getElementById('id-painel-administrador');
-
-painelAdministrador.addEventListener('change', function() {
-    const possuiImoveis = painelAdministrador.dataset.possuiImoveis === 'true';
-
-    if (this.value === 'deletar_imoveis.php' && !possuiImoveis) {
-        alert("Nenhum imóvel cadastrado ainda! ");
-        this.value = '';
-        return;
-    }
-
-    if (this.value)
-        window.location.href = this.value;
-
-});
+const btnDeletarImoveis = document.getElementById('btn-deletar-imoveis');
+if (btnDeletarImoveis) {
+    btnDeletarImoveis.addEventListener('click', function(event) {
+        const possuiImoveis = this.dataset.possuiImoveis === 'true';
+        if (!possuiImoveis) {
+            event.preventDefault();
+            alert("Nenhum imóvel cadastrado!");
+        }
+    });
+}
